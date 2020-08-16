@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Camera mainCamera;
-    public float speed;
     [Range(0, 1)]
     public float moveSpeed;
     public float mouseY;
@@ -25,13 +24,19 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(new Vector2(speed, 0));
         Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log($"S");
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            Debug.Log($"Hit! {collision.gameObject.name}");
     }
 
     private void Move(Vector3 dir)
     {
-        transform.position = dir + transform.position;
+        transform.position += dir;
     }
 
     private void FollowMouse(Vector2 mouse)
