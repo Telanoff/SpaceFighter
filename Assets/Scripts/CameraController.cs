@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, lerp);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, 0) + offset, lerp);
         transform.LookAt(target);
     }
 }

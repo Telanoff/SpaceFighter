@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1022883053}
-  offset: {x: 5, y: 0, z: -10}
-  lerp: 0
+  offset: {x: -5, y: 0, z: -10}
+  lerp: 0.69
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
