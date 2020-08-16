@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(new Vector2(speed, 0));
         Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
     }
 

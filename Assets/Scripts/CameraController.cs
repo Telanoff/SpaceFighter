@@ -8,9 +8,8 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;
     public float lerp;
 
-    private void FixedUpdate()
+    private void Start()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, 0) + offset, lerp);
-        transform.LookAt(target);
+        transform.position += offset;
     }
 }
