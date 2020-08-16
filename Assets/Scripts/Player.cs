@@ -10,13 +10,6 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float mouseY;
 
-    private Rigidbody2D rb;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
     private void Update()
     {
         if (Input.touchCount > 0)
@@ -36,9 +29,9 @@ public class Player : MonoBehaviour
         Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
     }
 
-    private void Move(Vector2 dir)
+    private void Move(Vector3 dir)
     {
-        rb.MovePosition(rb.position + dir);
+        transform.position = dir + transform.position;
     }
 
     private void FollowMouse(Vector2 mouse)
