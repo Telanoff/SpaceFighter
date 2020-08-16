@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -29,9 +27,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"S");
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            Debug.Log($"Hit! {collision.gameObject.name}");
+            GameManager.instance.Lose.Invoke();
     }
 
     private void Move(Vector3 dir)
