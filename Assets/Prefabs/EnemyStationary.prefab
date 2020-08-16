@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7178226264979793788}
   - component: {fileID: 7178226264979793789}
-  - component: {fileID: 7178226264979793787}
-  - component: {fileID: 7178226264979793786}
+  - component: {fileID: 8334367819646994900}
   m_Layer: 10
-  m_Name: EnemyPoint
+  m_Name: EnemyStationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: c19b30898a6da3e4492b7472016a1484, type: 2}
-  despawnPos: -5
---- !u!70 &7178226264979793787
+  despawnPos: {x: -5, y: -5, z: 5}
+--- !u!70 &8334367819646994900
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,25 +60,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000029604337, y: -0.2483392}
-  m_Size: {x: 2.0000005, y: 0.5033274}
+  m_Offset: {x: 0.002852165, y: 0.022817217}
+  m_Size: {x: 1.3194501, y: 1.3194501}
   m_Direction: 1
---- !u!58 &7178226264979793786
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178226264979793791}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &7178226266825242468
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f7581af3569f01d4680c83892dc256a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be2f3ae35e04eb648b1a90c4daf151a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

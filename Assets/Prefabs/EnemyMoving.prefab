@@ -293,4 +293,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 065fbd269992913469c7b0eefa624cfd, type: 2}
-  despawnPos: -5
+  despawnPos: {x: -5, y: -5, z: 5}

@@ -3,14 +3,19 @@
 public class Enemy : MonoBehaviour
 {
     public EnemyType type;
-    public float despawnPos;
+    public Vector3 despawnPos;
+
+    private Vector2 dir;
 
     private void FixedUpdate()
     {
         Move(new Vector2(-GameManager.instance.PlayerSpeed, 0));
-        Move(new Vector2(-type.speed, 0));
+        Move(dir);
 
-        if (transform.position.x <= despawnPos)
+        if (type.type == EnemyType.STATIONARY)
+            transform.Rotate(new Vector3() { z = Random.value });
+
+        if (transform.position.x <= despawnPos.x || transform.position.y <= despawnPos.y || transform.position.y >= despawnPos.z)
             Destroy(gameObject);
     }
 
@@ -22,6 +27,15 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         GameManager.instance.GetComponent<EnemySpawner>().enemies++;
+
+        if (type.type == EnemyType.STATIONARY)
+        {
+            float angle = Random.Range(-Mathf.PI, Mathf.PI);
+
+            dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * type.speed;
+        }
+        else
+            dir = new Vector2(-type.speed, 0);
     }
 
     private void OnDestroy()

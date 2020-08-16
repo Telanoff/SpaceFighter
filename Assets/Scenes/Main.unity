@@ -455,7 +455,7 @@ MonoBehaviour:
   - {fileID: 7178226264979793791, guid: ef7c3bf1ef98ca54a9049e4160924506, type: 3}
   spawnRange: {x: -5, y: 5}
   chance: 0.05
-  maxEnemies: 7
+  maxEnemies: 10
   enemies: 0
 --- !u!1 &2015317245
 GameObject:
