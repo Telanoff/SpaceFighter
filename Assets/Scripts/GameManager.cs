@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,7 +24,11 @@ public class GameManager : MonoBehaviour
         Lose.AddListener(() =>
         {
             Debug.LogError("You Lost HaHaHaHaHa!!!!");
-            Application.Quit();
+            #if UNITY_EDITOR
+                EditorApplication.ExecuteMenuItem("Edit/Play");
+            #else
+                Application.Quit();
+            #endif
         });
     }
 }

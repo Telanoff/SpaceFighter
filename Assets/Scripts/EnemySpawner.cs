@@ -4,14 +4,14 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
     public Vector2 spawnRange;
-    public int spawnChance;
+    public float chance;
     public int maxEnemies;
     public int enemies;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (enemies < maxEnemies)
-            if (Random.Range(0, spawnChance) == 1)
+            if (Random.value <= chance)
                 Spawn(15);
     }
 
