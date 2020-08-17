@@ -57,7 +57,6 @@ public class Player : MonoBehaviour
             isDead = true;
 
             alert.Play();
-            alert.Play();
 
             die.Play();
 
