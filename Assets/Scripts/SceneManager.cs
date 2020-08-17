@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
@@ -13,5 +14,8 @@ public class SceneManager : MonoBehaviour
 
     #endregion
 
-
+    public void ChangeScene(int index)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+    }
 }
