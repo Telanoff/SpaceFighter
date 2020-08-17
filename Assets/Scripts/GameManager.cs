@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,5 +28,17 @@ public class GameManager : MonoBehaviour
         Debug.LogError("You Lost HaHaHaHaHa!!!!");
 
         Player.falling.Play();
+    }
+
+    public void GoToShop()
+    {
+        StartCoroutine("GoToShopCoroutine");
+    }
+
+    private IEnumerator GoToShopCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+
+        GetComponent<SceneManager>().ChangeScene(1);
     }
 }

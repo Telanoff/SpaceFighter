@@ -1075,6 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1686538160}
   - component: {fileID: 1686538161}
+  - component: {fileID: 1686538163}
   - component: {fileID: 1686538162}
   m_Layer: 0
   m_Name: GameManager
@@ -1128,6 +1129,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1686538161}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GoToShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1686538162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,6 +1167,18 @@ MonoBehaviour:
   spawnRange: {x: -5, y: 5}
   maxEnemies: 7
   enemies: 0
+--- !u!114 &1686538163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686538159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c2f3b76b48cf447a916a1e509304fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1947773528
 GameObject:
   m_ObjectHideFlags: 0

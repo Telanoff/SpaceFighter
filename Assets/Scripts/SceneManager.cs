@@ -3,19 +3,14 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    #region Singleton
-
-    public static SceneManager instance;
-
-    private void Awake()
+    private void Start()
     {
-        instance = this;
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(0);
     }
-
-    #endregion
 
     public void ChangeScene(int index)
     {
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         UnityEngine.SceneManagement.SceneManager.LoadScene(index);
     }
 }
