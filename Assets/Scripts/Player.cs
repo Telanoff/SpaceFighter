@@ -2,6 +2,7 @@
 
 public class Player : MonoBehaviour
 {
+    public ParticleSystem falling;
     public Camera mainCamera;
     [Range(0, 1)]
     public float moveSpeed;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        falling.Stop();
     }
 
     private void Update()

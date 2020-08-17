@@ -20,16 +20,10 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent Lose;
 
-    private void Start()
+    public void DefaultLose()
     {
-        Lose.AddListener(() =>
-        {
-            Debug.LogError("You Lost HaHaHaHaHa!!!!");
-            #if UNITY_EDITOR
-                //EditorApplication.ExecuteMenuItem("Edit/Play");
-            #else
-                Application.Quit();
-            #endif
-        });
+        Debug.LogError("You Lost HaHaHaHaHa!!!!");
+
+        player.falling.Play();
     }
 }
