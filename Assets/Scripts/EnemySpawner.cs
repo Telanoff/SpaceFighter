@@ -3,16 +3,31 @@
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
-    public Vector2 spawnRange;
+    public float[] chances;
     public float chance;
+    public Vector2 spawnRange;
     public int maxEnemies;
     public int enemies;
 
     private void FixedUpdate()
     {
         if (enemies < maxEnemies)
-            if (Random.value <= chance)
-                Spawn(15);
+        {
+            if (Random.Range(0f, 100f) > chance)
+                return;
+            float r = Random.Range(0f, 100f);
+            float lc = 0;
+
+            for (int i = 0; i < chances.Length; i++)
+            {
+                if (r <= chances[i] + lc)
+                {
+                    Spawn(15, i);
+                    break;
+                }
+                lc += chances[i];
+            }
+        }
     }
 
     public void Spawn(Vector2 position, int index)
@@ -21,13 +36,8 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.position = position;
     }
 
-    public void Spawn(Vector2 position)
+    public void Spawn(float x, int index)
     {
-        Spawn(position, Random.Range(0, prefabs.Length));
-    }
-
-    public void Spawn(float x)
-    {
-        Spawn(new Vector2(x, Random.Range(spawnRange.x, spawnRange.y)));
+        Spawn(new Vector2(x, Random.Range(spawnRange.x, spawnRange.y)), index);
     }
 }
