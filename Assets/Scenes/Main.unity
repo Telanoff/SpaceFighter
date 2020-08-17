@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   falling: {fileID: 1947773531}
-  mainCamera: {fileID: 519420031}
   moveSpeed: 0.24
   mouseY: 0
   isDead: 0
@@ -490,7 +489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a9f6d55188498499da2a2728446f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1022883051}
+  Player: {fileID: 1022883051}
+  MainCamera: {fileID: 519420031}
+  MainCameraDefaultPosition: {x: 5, y: 0, z: -10}
   PlayerSpeed: 0.1
   Lose:
     m_PersistentCalls:

@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public Player player;
+    public Player Player;
+    public Camera MainCamera;
+    public Vector3 MainCameraDefaultPosition;
     public float PlayerSpeed;
 
     public UnityEvent Lose;
@@ -24,6 +26,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.LogError("You Lost HaHaHaHaHa!!!!");
 
-        player.falling.Play();
+        Player.falling.Play();
     }
 }

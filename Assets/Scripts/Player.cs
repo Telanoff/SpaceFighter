@@ -3,7 +3,6 @@
 public class Player : MonoBehaviour
 {
     public ParticleSystem falling;
-    public Camera mainCamera;
     [Range(0, 1)]
     public float moveSpeed;
     public float mouseY;
@@ -56,7 +55,7 @@ public class Player : MonoBehaviour
 
     private void FollowMouse(Vector2 mouse)
     {
-        Vector2 worldMouse = mainCamera.ScreenToWorldPoint(mouse);
+        Vector2 worldMouse = GameManager.instance.MainCamera.ScreenToWorldPoint(mouse);
         mouseY = worldMouse.y;
     }
 }

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Vector3 despawnPos;
 
     private Vector2 dir;
+    private bool lzS;
 
     private void FixedUpdate()
     {
@@ -14,11 +15,17 @@ public class Enemy : MonoBehaviour
             Move(new Vector2(-GameManager.instance.PlayerSpeed, 0));
 
         if (type.type == EnemyType.POINT)
-            dir = new Vector2(0, ((GameManager.instance.player.transform.position - transform.position).normalized * type.speed).y);
+            dir = new Vector2(0, ((GameManager.instance.Player.transform.position - transform.position).normalized * type.speed).y);
         Move(dir);
 
         if (type.type == EnemyType.STATIONARY)
             transform.Rotate(new Vector3() { z = Random.value });
+
+        if (lzS)
+        {
+            GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
+            GameManager.instance.MainCamera.transform.position += Random.insideUnitSphere * type.speed;
+        }
 
         if (transform.position.x <= despawnPos.x || transform.position.y <= despawnPos.y || transform.position.y >= despawnPos.z)
             Destroy(gameObject);
@@ -39,7 +46,7 @@ public class Enemy : MonoBehaviour
 
             dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * type.speed;
         }
-        else
+        else if (type.type != EnemyType.LAZER)
             dir = new Vector2(-type.speed, 0);
     }
 
@@ -47,7 +54,7 @@ public class Enemy : MonoBehaviour
     {
         if (type.type == EnemyType.LAZER)
         {
-            transform.position = new Vector2(5, GameManager.instance.player.transform.position.y);
+            transform.position = new Vector2(5, GameManager.instance.Player.transform.position.y);
 
             GetComponentInChildren<ParticleSystem>().Play();
             GetComponent<BoxCollider2D>().enabled = false;
@@ -60,18 +67,19 @@ public class Enemy : MonoBehaviour
     private IEnumerator Laser()
     {
         for (float t = 0; t <= 1; t++)
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(type.stay);
 
+        lzS = true;
         GetComponentInChildren<ParticleSystem>().Stop();
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
 
-        Debug.Log("Destroying");
-        Destroy(gameObject, 0.69f);
+        Destroy(gameObject, type.active);
     }
 
     private void OnDestroy()
     {
+        GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
         GameManager.instance.GetComponent<EnemySpawner>().enemies--;
     }
 }

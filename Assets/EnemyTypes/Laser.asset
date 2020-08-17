@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   type: 3
-  speed: 0
+  speed: 0.69
