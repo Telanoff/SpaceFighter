@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         Debug.LogError("You Lost HaHaHaHaHa!!!!");
 
         Player.falling.Play();
+        SceneManager.highScore = (int) Player.distance;
     }
 
     public void GoToShop()

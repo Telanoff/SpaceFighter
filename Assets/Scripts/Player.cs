@@ -11,9 +11,9 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float mouseY;
     public bool isDead;
+    public float distance;
 
     private Rigidbody2D rb;
-    private float distance;
 
     private void Start()
     {
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         else
         {
             distance += Time.fixedDeltaTime;
-            distanceTMP.SetText($"Distance: {(int) distance}");
+            distanceTMP.SetText($"Score: {(int) distance}");
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
         }
     }
