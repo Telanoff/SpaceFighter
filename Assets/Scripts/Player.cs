@@ -1,17 +1,19 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public AudioSource alert;
     public AudioSource die;
     public ParticleSystem falling;
+    public TextMeshProUGUI distanceTMP;
     [Range(0, 1)]
     public float moveSpeed;
     public float mouseY;
-
     public bool isDead;
 
     private Rigidbody2D rb;
+    private float distance;
 
     private void Start()
     {
@@ -41,7 +43,11 @@ public class Player : MonoBehaviour
         if (isDead)
             rb.gravityScale = 1;
         else
+        {
+            distance += Time.fixedDeltaTime;
+            distanceTMP.SetText($"Distance: {distance}");
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
