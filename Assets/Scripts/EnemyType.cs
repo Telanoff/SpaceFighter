@@ -7,5 +7,4 @@ public class EnemyType : ScriptableObject
 
     public byte type;
     public float speed;
-    public bool follow;
 }

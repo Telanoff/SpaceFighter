@@ -239,6 +239,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   moveSpeed: 0.24
   mouseY: 0
+  isDead: 0
 --- !u!50 &1022883052
 Rigidbody2D:
   serializedVersion: 4
@@ -287,6 +288,8 @@ GameObject:
   - component: {fileID: 1263520273}
   - component: {fileID: 1263520275}
   - component: {fileID: 1263520274}
+  - component: {fileID: 1263520277}
+  - component: {fileID: 1263520276}
   m_Layer: 0
   m_Name: Colliders
   m_TagString: Untagged
@@ -345,6 +348,58 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.60875684, y: 0.17361683}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7670461, y: 0.1341151}
+  m_EdgeRadius: 0
+--- !u!61 &1263520276
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263520272}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0021976829, y: -0.14284903}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3208609, y: 0.42420852}
+  m_EdgeRadius: 0
+--- !u!61 &1263520277
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263520272}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.60875684, y: 0.17361683}
@@ -434,6 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a9f6d55188498499da2a2728446f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1022883051}
   PlayerSpeed: 0.1
   Lose:
     m_PersistentCalls:
@@ -453,6 +509,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
   - {fileID: 7178226264979793791, guid: ef7c3bf1ef98ca54a9049e4160924506, type: 3}
+  - {fileID: 1276323275006284117, guid: 7af826893af43284a8e03e9a80af022d, type: 3}
   spawnRange: {x: -5, y: 5}
   chance: 0.05
   maxEnemies: 10

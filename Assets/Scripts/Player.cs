@@ -7,6 +7,15 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float mouseY;
 
+    public bool isDead;
+
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         if (Input.touchCount > 0)
@@ -22,13 +31,19 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
+        if (isDead)
+            rb.gravityScale = 1;
+        else
+            Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            isDead = true;
             GameManager.instance.Lose.Invoke();
+        }
     }
 
     private void Move(Vector3 dir)

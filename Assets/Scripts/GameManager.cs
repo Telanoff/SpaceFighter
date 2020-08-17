@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public Player player;
     public float PlayerSpeed;
 
     public UnityEvent Lose;
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("You Lost HaHaHaHaHa!!!!");
             #if UNITY_EDITOR
-                EditorApplication.ExecuteMenuItem("Edit/Play");
+                //EditorApplication.ExecuteMenuItem("Edit/Play");
             #else
                 Application.Quit();
             #endif

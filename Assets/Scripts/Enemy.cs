@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         Move(new Vector2(-GameManager.instance.PlayerSpeed, 0));
+
+        if (type.type == EnemyType.POINT)
+        {
+            dir = new Vector2(0, ((GameManager.instance.player.transform.position - transform.position).normalized * type.speed).y);
+        }
         Move(dir);
 
         if (type.type == EnemyType.STATIONARY)
