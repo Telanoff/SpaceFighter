@@ -531,7 +531,7 @@ MonoBehaviour:
   - 5
   chance: 5
   spawnRange: {x: -5, y: 5}
-  maxEnemies: 10
+  maxEnemies: 5
   enemies: 0
 --- !u!1 &1947773528
 GameObject:
