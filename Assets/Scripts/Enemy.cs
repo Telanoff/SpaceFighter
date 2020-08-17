@@ -88,7 +88,9 @@ public class Enemy : MonoBehaviour
     {
         GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
         GameManager.instance.GetComponent<EnemySpawner>().enemies--;
-        GameManager.instance.GetComponent<EnemySpawner>().chance += Time.deltaTime;
-        GameManager.instance.PlayerSpeed += Time.deltaTime/10;
+        if (GameManager.instance.GetComponent<EnemySpawner>().chance < 10)
+            GameManager.instance.GetComponent<EnemySpawner>().chance += Time.deltaTime;
+        if (GameManager.instance.PlayerSpeed < 1.14)
+            GameManager.instance.PlayerSpeed += Time.deltaTime/10;
     }
 }
