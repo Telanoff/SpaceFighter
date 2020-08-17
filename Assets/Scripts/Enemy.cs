@@ -67,14 +67,14 @@ public class Enemy : MonoBehaviour
     private IEnumerator Laser()
     {
         for (float t = 0; t <= 1; t++)
-            yield return new WaitForSeconds(type.stay);
+            yield return new WaitForSeconds(1);
 
         lzS = true;
         GetComponentInChildren<ParticleSystem>().Stop();
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
 
-        Destroy(gameObject, type.active);
+        Destroy(gameObject, 1);
     }
 
     private void OnDestroy()

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   speed: 0.69
+  stay: 1
+  active: 1
