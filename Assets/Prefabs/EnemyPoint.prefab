@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1276323275006284117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.06, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 1276323275778081103}
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 181338ad1fce8b940a03f0e993b5c64f, type: 2}
-  despawnPos: {x: -5, y: -5, z: 5}
+  despawnPos: {x: -5, y: -7, z: 7}
 --- !u!50 &7818224766996447552
 Rigidbody2D:
   serializedVersion: 4

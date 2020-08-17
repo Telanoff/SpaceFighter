@@ -504,7 +504,7 @@ MonoBehaviour:
   Player: {fileID: 1022883051}
   MainCamera: {fileID: 519420031}
   MainCameraDefaultPosition: {x: 5, y: 0, z: -10}
-  PlayerSpeed: 0.1
+  PlayerSpeed: 0.069
   Lose:
     m_PersistentCalls:
       m_Calls:
@@ -542,7 +542,7 @@ MonoBehaviour:
   - 30
   - 15
   - 5
-  chance: 5
+  chance: 1
   spawnRange: {x: -5, y: 5}
   maxEnemies: 5
   enemies: 0

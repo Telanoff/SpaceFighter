@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 065fbd269992913469c7b0eefa624cfd, type: 2}
-  despawnPos: {x: -5, y: -5, z: 5}
+  despawnPos: {x: -5, y: -6, z: 6}
 --- !u!50 &6337649079446628873
 Rigidbody2D:
   serializedVersion: 4

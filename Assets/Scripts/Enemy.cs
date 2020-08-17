@@ -48,6 +48,13 @@ public class Enemy : MonoBehaviour
         }
         else if (type.type != EnemyType.LAZER)
             dir = new Vector2(-type.speed, 0);
+
+        if (type.type == EnemyType.LAZER)
+        {
+            GetComponentInChildren<ParticleSystem>().Play();
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
     }
 
     private void Start()
@@ -81,5 +88,7 @@ public class Enemy : MonoBehaviour
     {
         GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
         GameManager.instance.GetComponent<EnemySpawner>().enemies--;
+        GameManager.instance.GetComponent<EnemySpawner>().chance += Time.deltaTime;
+        GameManager.instance.PlayerSpeed += Time.deltaTime/10;
     }
 }
