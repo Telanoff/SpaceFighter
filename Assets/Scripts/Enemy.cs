@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioSource lazerLoad;
+    public AudioSource lazerShoot;
     public EnemyType type;
     public Vector3 despawnPos;
 
@@ -54,6 +56,8 @@ public class Enemy : MonoBehaviour
             GetComponentInChildren<ParticleSystem>().Play();
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponentInChildren<SpriteRenderer>().enabled = false;
+
+            lazerShoot.Stop();
         }
     }
 
@@ -67,6 +71,11 @@ public class Enemy : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponentInChildren<SpriteRenderer>().enabled = false;
 
+            lazerLoad.Play();
+            lazerLoad.loop = true;
+
+            lazerShoot.Stop();
+
             StartCoroutine("Laser");
         }
     }
@@ -76,10 +85,14 @@ public class Enemy : MonoBehaviour
         for (float t = 0; t <= 1; t++)
             yield return new WaitForSeconds(1);
 
+        lazerLoad.Stop();
         lzS = true;
         GetComponentInChildren<ParticleSystem>().Stop();
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
+
+        lazerShoot.Play();
+        lazerShoot.loop = true;
 
         Destroy(gameObject, 1);
     }

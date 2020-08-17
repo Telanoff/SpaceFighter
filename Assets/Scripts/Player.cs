@@ -2,6 +2,8 @@
 
 public class Player : MonoBehaviour
 {
+    public AudioSource alert;
+    public AudioSource die;
     public ParticleSystem falling;
     [Range(0, 1)]
     public float moveSpeed;
@@ -16,6 +18,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         falling.Stop();
+
+        alert.Stop();
+        die.Stop();
     }
 
     private void Update()
@@ -44,6 +49,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             isDead = true;
+
+            alert.Play();
+            alert.loop = true;
+
+            die.Play();
+
             GameManager.instance.Lose.Invoke();
         }
     }
