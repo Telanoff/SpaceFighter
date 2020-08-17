@@ -704,8 +704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134, y: -50}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 348.6, y: -26.7}
+  m_SizeDelta: {x: 690, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952340747
 MonoBehaviour:
@@ -924,9 +924,9 @@ MonoBehaviour:
   alert: {fileID: 630049031}
   die: {fileID: 11784420}
   falling: {fileID: 1947773531}
+  distanceTMP: {fileID: 952340747}
   moveSpeed: 0.24
   mouseY: 0
-  distance: 0
   isDead: 0
 --- !u!50 &1022883052
 Rigidbody2D:

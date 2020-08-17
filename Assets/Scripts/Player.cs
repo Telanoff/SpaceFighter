@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         else
         {
             distance += Time.fixedDeltaTime;
-            distanceTMP.SetText($"Distance: {distance}");
+            distanceTMP.SetText($"Distance: {(int) distance}");
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
         }
     }
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
             isDead = true;
 
             alert.Play();
-            alert.loop = true;
+            alert.Play();
 
             die.Play();
 
