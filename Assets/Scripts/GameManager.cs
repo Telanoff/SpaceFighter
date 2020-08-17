@@ -25,10 +25,11 @@ public class GameManager : MonoBehaviour
 
     public void DefaultLose()
     {
-        Debug.LogError("You Lost HaHaHaHaHa!!!!");
-
         Player.falling.Play();
-        SceneManager.highScore = (int) Player.distance;
+
+        if (Player.distance > PlayerPrefs.GetInt(SceneManager.CHIGHSCORE))
+            PlayerPrefs.SetInt(SceneManager.CHIGHSCORE, (int) Player.distance);
+        PlayerPrefs.Save();
     }
 
     public void GoToShop()

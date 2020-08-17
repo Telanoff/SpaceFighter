@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc007fa6f8adb542a59df6d7eeba0d5, type: 3}
+  m_Name: NormalMode
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 7178226264979793791, guid: ef7c3bf1ef98ca54a9049e4160924506, type: 3}
+  - {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
+  - {fileID: 1276323275006284117, guid: 7af826893af43284a8e03e9a80af022d, type: 3}
+  - {fileID: 7633097632938194889, guid: 90ec5a9d3b96aa54184d2a9b29ee4839, type: 3}
+  chances:
+  - 50
+  - 30
+  - 15
+  - 5
+  maxChance: 10
+  chance: 1
+  maxEnemies: 7
+  spawnRange: {x: -5, y: 5}

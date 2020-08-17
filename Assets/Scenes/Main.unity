@@ -1154,19 +1154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0390420746c4cae4d992bd329f3d114c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 7178226264979793791, guid: ef7c3bf1ef98ca54a9049e4160924506, type: 3}
-  - {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
-  - {fileID: 1276323275006284117, guid: 7af826893af43284a8e03e9a80af022d, type: 3}
-  - {fileID: 7633097632938194889, guid: 90ec5a9d3b96aa54184d2a9b29ee4839, type: 3}
-  chances:
-  - 0
-  - 0
-  - 25
-  - 75
-  chance: 1
-  spawnRange: {x: -5, y: 5}
-  maxEnemies: 7
+  modes:
+  - {fileID: 11400000, guid: 1f718f4078a15eb48a4678121a820059, type: 2}
+  - {fileID: 11400000, guid: e2095645a0cf3aa49a6f18e5343e10df, type: 2}
+  mode: {fileID: 11400000, guid: 1f718f4078a15eb48a4678121a820059, type: 2}
   enemies: 0
 --- !u!114 &1686538163
 MonoBehaviour:

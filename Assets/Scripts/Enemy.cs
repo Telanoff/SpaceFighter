@@ -99,10 +99,11 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
+        if (GameManager.instance.MainCamera != null)
+            GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
         GameManager.instance.GetComponent<EnemySpawner>().enemies--;
-        if (GameManager.instance.GetComponent<EnemySpawner>().chance < 10)
-            GameManager.instance.GetComponent<EnemySpawner>().chance += Time.deltaTime;
+        if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
+            GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
         if (GameManager.instance.PlayerSpeed < 1.14)
             GameManager.instance.PlayerSpeed += Time.deltaTime/10;
     }
