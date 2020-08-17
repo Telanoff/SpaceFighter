@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GoToShopCoroutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.69f);
 
         GetComponent<SceneManager>().ChangeScene(1);
     }
