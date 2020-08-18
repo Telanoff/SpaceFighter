@@ -43,4 +43,11 @@ public class GameManager : MonoBehaviour
 
         GetComponent<SceneManager>().ChangeScene(1);
     }
+
+    private void OnDestroy()
+    {
+        if (Player.distance > PlayerPrefs.GetInt(SceneManager.CHIGHSCORE))
+            PlayerPrefs.SetInt(SceneManager.CHIGHSCORE, (int)Player.distance);
+        PlayerPrefs.Save();
+    }
 }

@@ -52,8 +52,10 @@ public class EnemyPoint : Enemy
         }
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
+
         alive = false;
     }
 }

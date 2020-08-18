@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         GameManager.instance.GetComponent<EnemySpawner>().enemies++;
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         if (GameManager.instance.MainCamera != null)
             GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
