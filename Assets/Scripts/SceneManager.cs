@@ -6,13 +6,16 @@ public class SceneManager : MonoBehaviour
     public static readonly string HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", MODE = "hmode";
     public static string CHIGHSCORE;
     public TextMeshProUGUI highScoreTMP;
+    public TMP_Dropdown modeDropdown;
 
     private void Start()
     {
         ChangeMode(PlayerPrefs.GetInt(MODE));
 
         if (highScoreTMP != null)
-        highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
+            highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
+        if (modeDropdown != null)
+            modeDropdown.value = PlayerPrefs.GetInt(MODE);
     }
 
     public void ChangeScene(int index)

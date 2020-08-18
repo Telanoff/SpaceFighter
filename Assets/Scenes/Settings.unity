@@ -1940,6 +1940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreTMP: {fileID: 0}
+  modeDropdown: {fileID: 4723164}
 --- !u!4 &2096367429
 Transform:
   m_ObjectHideFlags: 0
