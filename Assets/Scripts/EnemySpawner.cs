@@ -2,9 +2,16 @@
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static readonly string MODE = "spawnmode";
+
     public EnemySpawnMode[] modes;
     public EnemySpawnMode mode;
     public int enemies;
+
+    private void Start()
+    {
+        mode = modes[PlayerPrefs.GetInt(MODE)];
+    }
 
     private void FixedUpdate()
     {
@@ -36,10 +43,5 @@ public class EnemySpawner : MonoBehaviour
     public void Spawn(float x, int index)
     {
         Spawn(new Vector2(x, Random.Range(mode.spawnRange.x, mode.spawnRange.y)), index);
-    }
-
-    public void ChangeMode(int index)
-    {
-        mode = modes[index];
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 public class SceneManager : MonoBehaviour
 {
     public static readonly string HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore";
-    public static readonly byte NORMALMODE = 0x00, HARDMODE = 0xAA;
+    public static readonly int NORMALMODE = 0, HARDMODE = 1;
     public static string CHIGHSCORE;
-    public static byte Mode;
+    public static int Mode;
     public TextMeshProUGUI highScoreTMP;
 
     private void Start()
@@ -14,7 +14,7 @@ public class SceneManager : MonoBehaviour
         ChangeMode(HARDMODE);
 
         if (highScoreTMP != null)
-            highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
+        highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
     }
 
     public void ChangeScene(int index)
@@ -22,9 +22,15 @@ public class SceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(index);
     }
 
-    public void ChangeMode(byte newMode)
+    public void ChangeMode(int newMode)
     {
         Mode = newMode;
         CHIGHSCORE = Mode == NORMALMODE ? HIGHSCORE : HARDHIGHSCORE;
+    }
+
+    public void ChangeSpawnMode(int mode)
+    {
+        PlayerPrefs.SetInt(EnemySpawner.MODE, mode);
+        PlayerPrefs.Save();
     }
 }
