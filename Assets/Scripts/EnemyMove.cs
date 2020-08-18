@@ -6,10 +6,8 @@ public class EnemyMove : Enemy
 {
     public float speed;
 
-    protected override void Awake()
+    public void SetDirection(Vector2 newDir)
     {
-        base.Awake();
-
-        dir = new Vector2(-speed, 0);
+        dir = newDir;
     }
 }
