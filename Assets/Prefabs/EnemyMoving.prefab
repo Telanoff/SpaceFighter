@@ -186,4 +186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnPos: {x: -5, y: 15, z: -5, w: 5}
-  speed: 0.24
+  speed: 0.69

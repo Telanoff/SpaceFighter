@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyPoint : Enemy
 {
     public GameObject movePrefab;
+    public Vector2 spawnOffset;
     public float speed;
     public float gravity;
     public float shootDelay;
@@ -46,6 +47,7 @@ public class EnemyPoint : Enemy
 
             GameObject shot = Instantiate(movePrefab);
             shot.transform.position = transform.position;
+            shot.transform.position += (Vector3) spawnOffset;
             shot.GetComponent<EnemyMove>().SetDirection(playerDir);
         }
     }

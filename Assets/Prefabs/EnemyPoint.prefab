@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnPos: {x: -7, y: 15, z: -7, w: 7}
   movePrefab: {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
+  spawnOffset: {x: -0.88, y: 0}
   speed: 0.069
   gravity: 0.068
   shootDelay: 0.69
