@@ -3,15 +3,13 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    public static readonly string HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore";
-    public static readonly int NORMALMODE = 0, HARDMODE = 1;
+    public static readonly string HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", MODE = "hmode";
     public static string CHIGHSCORE;
-    public static int Mode;
     public TextMeshProUGUI highScoreTMP;
 
     private void Start()
     {
-        ChangeMode(HARDMODE);
+        ChangeMode(PlayerPrefs.GetInt(MODE));
 
         if (highScoreTMP != null)
         highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
@@ -24,8 +22,9 @@ public class SceneManager : MonoBehaviour
 
     public void ChangeMode(int newMode)
     {
-        Mode = newMode;
-        CHIGHSCORE = Mode == NORMALMODE ? HIGHSCORE : HARDHIGHSCORE;
+        PlayerPrefs.SetInt(MODE, newMode);
+        PlayerPrefs.Save();
+        CHIGHSCORE = newMode == 0 ? HIGHSCORE : HARDHIGHSCORE;
     }
 
     public void ChangeSpawnMode(int mode)
