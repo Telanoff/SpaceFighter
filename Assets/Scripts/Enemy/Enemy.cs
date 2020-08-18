@@ -6,9 +6,11 @@ public class Enemy : MonoBehaviour
 
     protected Vector2 dir;
     private bool dontCheck;
+    private bool valid;
 
     protected virtual void FixedUpdate()
     {
+        valid = true;
         if (!dontCheck)
             foreach (Collider2D collider in GetComponents<Collider2D>())
                 if (collider.isTrigger)
@@ -36,18 +38,21 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == gameObject.layer)
+        if (collision.gameObject.layer == gameObject.layer && !valid)
             Destroy(gameObject);
     }
 
     protected virtual void OnDestroy()
     {
-        if (GameManager.instance.MainCamera != null)
-            GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
-        GameManager.instance.GetComponent<EnemySpawner>().enemies--;
-        if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
-            GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
-        if (GameManager.instance.PlayerSpeed < 1.14)
-            GameManager.instance.PlayerSpeed += Time.deltaTime/100;
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.MainCamera != null)
+                GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
+            GameManager.instance.GetComponent<EnemySpawner>().enemies--;
+            if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
+                GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
+            if (GameManager.instance.PlayerSpeed < 1.14)
+                GameManager.instance.PlayerSpeed += Time.deltaTime / 100;
+        }
     }
 }

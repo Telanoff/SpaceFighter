@@ -31,16 +31,16 @@ public class GameManager : MonoBehaviour
         SaveAll();
     }
 
-    public void GoToShop()
+    public void GoToMenu()
     {
-        StartCoroutine("GoToShopCoroutine");
+        StartCoroutine("GoToMenuCoroutine");
     }
 
-    private IEnumerator GoToShopCoroutine()
+    private IEnumerator GoToMenuCoroutine()
     {
         yield return new WaitForSeconds(1.69f);
 
-        GetComponent<SceneManager>().ChangeScene(1);
+        GetComponent<SceneManager>().ChangeScene(0);
         SaveAll();
     }
 
