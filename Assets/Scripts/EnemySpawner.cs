@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
             mode = modes[PlayerPrefs.GetInt(MODE)];
         }
         catch (System.Exception e)
-        {}
+        { e.ToString(); }
     }
 
     private void FixedUpdate()
