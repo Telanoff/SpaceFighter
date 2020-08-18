@@ -5,6 +5,7 @@ public class DebrisGenerator : MonoBehaviour
     public GameObject prefab;
     public Vector2 bounds;
     public float spawnX;
+    public float maxChance;
     public float chance;
 
     private void FixedUpdate()
@@ -13,6 +14,9 @@ public class DebrisGenerator : MonoBehaviour
         {
             GameObject debris = Instantiate(prefab);
             debris.transform.position = new Vector3(spawnX, Random.Range(bounds.x, bounds.y));
+
+            if (chance < maxChance)
+                chance += Time.deltaTime / 5;
         }
     }
 }

@@ -7,6 +7,7 @@ public class SceneManager : MonoBehaviour
     public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE, LIGHTNINGHIGHSCORE };
     public static string CHIGHSCORE;
     public TextMeshProUGUI highScoreTMP;
+    public TextMeshProUGUI debrisTMP;
     public TMP_Dropdown modeDropdown;
 
     private void Start()
@@ -15,6 +16,8 @@ public class SceneManager : MonoBehaviour
 
         if (highScoreTMP != null)
             highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
+        if (debrisTMP != null)
+            debrisTMP.SetText($"{PlayerPrefs.GetInt(Debris.DEBRIS)}");
         if (modeDropdown != null)
             modeDropdown.value = PlayerPrefs.GetInt(MODE);
     }

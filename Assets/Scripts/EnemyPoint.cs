@@ -48,9 +48,7 @@ public class EnemyPoint : Enemy
             GameObject shot = Instantiate(movePrefab);
             shot.transform.position = transform.position;
             shot.transform.position += (Vector3) spawnOffset;
-            Vector2 nPlayerDir = playerDir / gravity;
-            float ang = Mathf.Clamp(Mathf.Atan2(nPlayerDir.y, nPlayerDir.x), -45, 45) * Mathf.Deg2Rad;
-            shot.GetComponent<EnemyMove>().SetDirection(new Vector2(Mathf.Sin(ang), Mathf.Cos(ang)));
+            shot.GetComponent<EnemyMove>().SetDirection(new Vector2(-1, 0));
         }
     }
 

@@ -18,5 +18,7 @@ public class Debris : MonoBehaviour
             GameManager.instance.DebrisCount++;
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Lazer"))
+            Destroy(gameObject);
     }
 }
