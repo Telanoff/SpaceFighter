@@ -32,7 +32,11 @@ public class UIManager : MonoBehaviour
         counter.SetText("1");
         yield return new WaitForSeconds(1);
 
+        counter.SetText("GO!");
+        yield return new WaitForSeconds(0.69f);
+
         counter.SetText("");
+
         GameManager.instance.Paused = false;
     }
 }
