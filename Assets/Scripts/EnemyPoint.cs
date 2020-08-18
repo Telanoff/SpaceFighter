@@ -49,7 +49,6 @@ public class EnemyPoint : Enemy
             shot.transform.position = transform.position;
             shot.transform.position += (Vector3) spawnOffset;
             shot.GetComponent<EnemyMove>().SetDirection(playerDir / gravity);
-            shot.GetComponent<EnemyMove>().SetDirection(new Vector2(-1, 0));
         }
     }
 

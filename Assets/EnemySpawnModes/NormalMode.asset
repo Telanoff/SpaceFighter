@@ -17,10 +17,10 @@ MonoBehaviour:
   - {fileID: 1276323275006284117, guid: 7af826893af43284a8e03e9a80af022d, type: 3}
   - {fileID: 7633097632938194889, guid: 90ec5a9d3b96aa54184d2a9b29ee4839, type: 3}
   chances:
-  - 75
-  - 18
-  - 7
+  - 70
+  - 25
+  - 5
   maxChance: 10
-  chance: 1
+  chance: 1.9083347
   maxEnemies: 7
   spawnRange: {x: -5, y: 5}

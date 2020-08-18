@@ -50,7 +50,7 @@ MonoBehaviour:
   despawnPos: {x: -5, y: 15, z: -5, w: 5}
   movePrefab: {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
   spawnOffset: {x: -1.14, y: 0}
-  speed: 0.069
+  speed: 0.05
   gravity: 0.024
   shootDelay: 1
 --- !u!50 &7818224766996447552
