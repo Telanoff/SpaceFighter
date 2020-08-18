@@ -1402,6 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7607d7f06844af142bc69eddb243daa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paralax: 30
 --- !u!212 &1313944043
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1953,6 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7607d7f06844af142bc69eddb243daa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paralax: 30
 --- !u!1 &1947773528
 GameObject:
   m_ObjectHideFlags: 0

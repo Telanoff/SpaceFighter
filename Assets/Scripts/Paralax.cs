@@ -2,6 +2,8 @@
 
 public class Paralax : MonoBehaviour
 {
+    public float paralax;
+
     private SpriteRenderer sprite;
     private float startPos;
     private float dist;
@@ -17,7 +19,7 @@ public class Paralax : MonoBehaviour
 
     private void FixedUpdate()
     {
-        dist -= GameManager.instance.PlayerSpeed * Time.fixedDeltaTime;
+        dist -= (GameManager.instance ? GameManager.instance.PlayerSpeed : 0.1f) * (paralax / 100);
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
 
         if (dist < startPos - width)
