@@ -10,6 +10,6 @@ public class EnemyMove : Enemy
     {
         base.Awake();
 
-        dir = new Vector2(-type.speed, 0);
+        dir = new Vector2(-speed, 0);
     }
 }

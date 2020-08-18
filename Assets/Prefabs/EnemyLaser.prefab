@@ -5190,7 +5190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7633097632938194890}
-  - component: {fileID: 7633097632938194891}
+  - component: {fileID: 8722931038584226703}
   - component: {fileID: 7727353981515286280}
   - component: {fileID: 7633097632938194892}
   m_Layer: 10
@@ -5216,7 +5216,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7633097632938194891
+--- !u!114 &8722931038584226703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5225,13 +5225,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7633097632938194889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0092ae6b48175524287d369e514fdb63, type: 3}
+  m_Script: {fileID: 11500000, guid: 16593cdb3865f3b4c8d736e382292c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnPos: {x: 0, y: 0, z: 0}
   lazerLoad: {fileID: 2188663854269108357}
   lazerShoot: {fileID: 7842647813418716595}
-  type: {fileID: 11400000, guid: b8594fa8b24a25a4dab976bff9dd1a74, type: 2}
-  despawnPos: {x: -10, y: -10, z: 10}
+  spawnX: 5
+  shake: 0.69
+  chargeTime: 1
+  fireTime: 1
 --- !u!50 &7727353981515286280
 Rigidbody2D:
   serializedVersion: 4

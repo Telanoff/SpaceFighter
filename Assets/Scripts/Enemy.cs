@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public AudioSource lazerLoad;
-    public AudioSource lazerShoot;
-    public EnemyType type;
     public Vector3 despawnPos;
 
     protected Vector2 dir;

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyLazer : Enemy
 {
+    public AudioSource lazerLoad;
+    public AudioSource lazerShoot;
+
     public float spawnX;
     public float shake;
     public float chargeTime;
@@ -25,7 +28,7 @@ public class EnemyLazer : Enemy
         if (shot)
         {
             GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
-            GameManager.instance.MainCamera.transform.position += Random.insideUnitSphere * type.speed;
+            GameManager.instance.MainCamera.transform.position += Random.insideUnitSphere * shake;
         }
     }
 

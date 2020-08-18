@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276323275006284118}
-  - component: {fileID: 1276323275006284119}
   - component: {fileID: 7818224766996447552}
   - component: {fileID: 6935939509067512294}
+  - component: {fileID: 7101205145410877903}
   m_Layer: 10
   m_Name: EnemyPoint
   m_TagString: Untagged
@@ -34,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1276323275006284119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276323275006284117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0092ae6b48175524287d369e514fdb63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 181338ad1fce8b940a03f0e993b5c64f, type: 2}
-  despawnPos: {x: -5, y: -7, z: 7}
 --- !u!50 &7818224766996447552
 Rigidbody2D:
   serializedVersion: 4
@@ -108,6 +94,21 @@ PolygonCollider2D:
       - {x: 0.39247322, y: -0.032518357}
       - {x: 0.35513783, y: 0.24182656}
       - {x: 0.23815966, y: 0.40100372}
+--- !u!114 &7101205145410877903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276323275006284117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc76daef31c95048b69be7e936f2a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnPos: {x: -7, y: -7, z: 7}
+  speed: 0.069
+  gravity: 0.068
 --- !u!1 &1276323275778081102
 GameObject:
   m_ObjectHideFlags: 0

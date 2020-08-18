@@ -91,9 +91,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3042842369554872863}
-  - component: {fileID: 3042842369554872862}
   - component: {fileID: 6337649079446628873}
   - component: {fileID: 6271187451243590171}
+  - component: {fileID: 1005771707880061195}
   m_Layer: 10
   m_Name: EnemyMoving
   m_TagString: Untagged
@@ -116,20 +116,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3042842369554872862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042842369554872860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0092ae6b48175524287d369e514fdb63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 065fbd269992913469c7b0eefa624cfd, type: 2}
-  despawnPos: {x: -5, y: -6, z: 6}
 --- !u!50 &6337649079446628873
 Rigidbody2D:
   serializedVersion: 4
@@ -187,3 +173,17 @@ PolygonCollider2D:
       - {x: -0.7293812, y: 0.0040183067}
       - {x: 0.021401355, y: -0.27460608}
       - {x: 0.7272434, y: -0.44007164}
+--- !u!114 &1005771707880061195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042842369554872860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8bfe45177f6ed48aba9153e2951872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnPos: {x: -5, y: -5, z: 5}
+  speed: 0
