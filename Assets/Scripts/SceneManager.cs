@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class SceneManager : MonoBehaviour
 {
-    public static readonly string POSTPROCESSING = "postprocessing", HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", SAUCERHIGHSCORE = "shighscore", LIGHTNINGHIGHSCORE = "lhighscore", MODE = "hmode";
-    public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE, LIGHTNINGHIGHSCORE };
+    public static readonly string POSTPROCESSING = "postprocessing",
+        HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", SAUCERHIGHSCORE = "shighscore", LIGHTNINGHIGHSCORE = "lhighscore", METEORMODE = "mhighscore",
+        MODE = "hmode";
+    public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE, LIGHTNINGHIGHSCORE, METEORMODE };
     public static string CHIGHSCORE;
     public UnityEvent onSceneChange;
     public TextMeshProUGUI highScoreTMP;
