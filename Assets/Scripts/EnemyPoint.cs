@@ -34,7 +34,10 @@ public class EnemyPoint : Enemy
 
         base.FixedUpdate();
 
-        playerDir = (GameManager.instance.Player.transform.position - transform.position).normalized * gravity;
+        if (GameManager.instance.Player == null)
+            playerDir = Vector2.zero;
+        else
+            playerDir = (GameManager.instance.Player.transform.position - transform.position).normalized * gravity;
 
         Move(playerDir);
     }

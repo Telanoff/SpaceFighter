@@ -3662,6 +3662,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2096367429}
   - component: {fileID: 2096367428}
+  - component: {fileID: 2096367431}
+  - component: {fileID: 2096367430}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3702,6 +3704,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2096367430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0390420746c4cae4d992bd329f3d114c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modes:
+  - {fileID: 11400000, guid: 3f564e33b8d8ba140a0048b23c12a4bd, type: 2}
+  mode: {fileID: 11400000, guid: 3f564e33b8d8ba140a0048b23c12a4bd, type: 2}
+  enemies: 0
+--- !u!114 &2096367431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a9f6d55188498499da2a2728446f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  MainCamera: {fileID: 0}
+  MainCameraDefaultPosition: {x: 5, y: 0, z: -10}
+  PlayerSpeed: 0.1
+  DebrisCount: 0
+  StarCount: 0
+  Lose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2113694576
 GameObject:
   m_ObjectHideFlags: 0

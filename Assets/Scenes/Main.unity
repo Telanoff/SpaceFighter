@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407170526}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -2432,6 +2432,7 @@ MonoBehaviour:
   highScoreTMP: {fileID: 0}
   debrisTMP: {fileID: 0}
   starTMP: {fileID: 0}
+  ppt: {fileID: 0}
   modeDropdown: {fileID: 0}
   mainCamera: {fileID: 1407170530}
   pp: 0

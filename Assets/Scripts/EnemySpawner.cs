@@ -10,7 +10,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        mode = modes[PlayerPrefs.GetInt(MODE)];
+        try
+        {
+            mode = modes[PlayerPrefs.GetInt(MODE)];
+        }
+        catch (System.Exception e)
+        {}
     }
 
     private void FixedUpdate()

@@ -49,12 +49,15 @@ public class GameManager : MonoBehaviour
 
     public void SaveAll()
     {
-        if (Player.distance > PlayerPrefs.GetInt(SceneManager.CHIGHSCORE))
-            PlayerPrefs.SetInt(SceneManager.CHIGHSCORE, (int)Player.distance);
+        if (Player != null)
+        {
+            if (Player.distance > PlayerPrefs.GetInt(SceneManager.CHIGHSCORE))
+                PlayerPrefs.SetInt(SceneManager.CHIGHSCORE, (int)Player.distance);
 
-        PlayerPrefs.SetInt(Debris.DEBRIS, PlayerPrefs.GetInt(Debris.DEBRIS) + DebrisCount);
-        PlayerPrefs.SetInt(StarDust.STARDUST, PlayerPrefs.GetInt(StarDust.STARDUST) + StarCount);
+            PlayerPrefs.SetInt(Debris.DEBRIS, PlayerPrefs.GetInt(Debris.DEBRIS) + DebrisCount);
+            PlayerPrefs.SetInt(StarDust.STARDUST, PlayerPrefs.GetInt(StarDust.STARDUST) + StarCount);
 
-        PlayerPrefs.Save();
+            PlayerPrefs.Save();
+        }
     }
 }
