@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Vector3 despawnPos;
+    public Vector4 despawnPos;
 
     protected Vector2 dir;
 
@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
         Move(new Vector2(-GameManager.instance.PlayerSpeed, 0));
         Move(dir);
 
-        if (transform.position.x <= despawnPos.x || transform.position.y <= despawnPos.y || transform.position.y >= despawnPos.z)
+        if (transform.position.x <= despawnPos.x || transform.position.x >= despawnPos.y || transform.position.y <= despawnPos.z || transform.position.y >= despawnPos.w)
             Destroy(gameObject);
     }
 

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a0cca3186b4e2438cac920dcd591fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnPos: {x: -5, y: -8, z: 8}
+  despawnPos: {x: -5, y: 17, z: -8, w: 8}
   speed: 0.069
 --- !u!1 &7178226266825242468
 GameObject:

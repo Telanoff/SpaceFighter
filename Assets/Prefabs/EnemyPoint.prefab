@@ -106,9 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc76daef31c95048b69be7e936f2a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnPos: {x: -7, y: -7, z: 7}
+  despawnPos: {x: -7, y: 15, z: -7, w: 7}
+  movePrefab: {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
   speed: 0.069
   gravity: 0.068
+  shootDelay: 0.69
 --- !u!1 &1276323275778081102
 GameObject:
   m_ObjectHideFlags: 0

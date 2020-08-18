@@ -185,5 +185,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8bfe45177f6ed48aba9153e2951872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnPos: {x: -5, y: -5, z: 5}
-  speed: 0
+  despawnPos: {x: -5, y: 15, z: -5, w: 5}
+  speed: 0.24

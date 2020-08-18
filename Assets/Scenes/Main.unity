@@ -1169,6 +1169,7 @@ MonoBehaviour:
   modes:
   - {fileID: 11400000, guid: e2095645a0cf3aa49a6f18e5343e10df, type: 2}
   - {fileID: 11400000, guid: 1f718f4078a15eb48a4678121a820059, type: 2}
+  - {fileID: 11400000, guid: 3392b6f004ceb034caae2df9aa274563, type: 2}
   mode: {fileID: 0}
   enemies: 0
 --- !u!114 &1686538163
@@ -1184,6 +1185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreTMP: {fileID: 0}
+  modeDropdown: {fileID: 0}
 --- !u!1 &1947773528
 GameObject:
   m_ObjectHideFlags: 0
