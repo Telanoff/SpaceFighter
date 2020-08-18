@@ -8,6 +8,6 @@ public class EnemyMove : Enemy
 
     public void SetDirection(Vector2 newDir)
     {
-        dir = newDir;
+        dir = newDir * speed;
     }
 }
