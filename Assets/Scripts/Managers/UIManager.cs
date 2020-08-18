@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public void HideMenu()
     {
         menu.SetActive(false);
+        StartCoroutine("Resume");
     }
 
     private IEnumerator Resume()
