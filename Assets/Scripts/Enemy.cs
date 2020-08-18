@@ -6,9 +6,11 @@ public class Enemy : MonoBehaviour
 
     protected Vector2 dir;
     private bool dontCheck;
+    private bool valid;
 
     protected virtual void FixedUpdate()
     {
+        valid = true;
         if (!dontCheck)
             foreach (Collider2D collider in GetComponents<Collider2D>())
                 if (collider.isTrigger)
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == gameObject.layer)
+        if (collision.gameObject.layer == gameObject.layer && !valid)
             Destroy(gameObject);
     }
 
