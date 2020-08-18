@@ -11,13 +11,14 @@ public class EnemyPoint : Enemy
     public float shootDelay;
 
     private Vector2 playerDir;
+    private float angle;
     private bool alive;
 
     protected override void Awake()
     {
         base.Awake();
 
-        float angle = Random.Range(-Mathf.PI, Mathf.PI);
+        angle = Random.Range(-Mathf.PI, Mathf.PI);
 
         dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * speed;
 
@@ -28,13 +29,12 @@ public class EnemyPoint : Enemy
 
     protected override void FixedUpdate()
     {
-        float angle = Random.Range(-Mathf.PI, Mathf.PI);
-
+        angle += Mathf.Deg2Rad;
         dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * speed;
 
         base.FixedUpdate();
 
-        playerDir = (GameManager.instance.Player.transform.position - transform.position).normalized;
+        playerDir = (GameManager.instance.Player.transform.position - transform.position).normalized * gravity;
 
         Move(playerDir);
     }
@@ -48,7 +48,7 @@ public class EnemyPoint : Enemy
             GameObject shot = Instantiate(movePrefab);
             shot.transform.position = transform.position;
             shot.transform.position += (Vector3) spawnOffset;
-            shot.GetComponent<EnemyMove>().SetDirection(playerDir);
+            shot.GetComponent<EnemyMove>().SetDirection(playerDir / gravity);
         }
     }
 

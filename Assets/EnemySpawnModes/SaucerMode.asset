@@ -17,6 +17,6 @@ MonoBehaviour:
   chances:
   - 100
   maxChance: 5
-  chance: 1
-  maxEnemies: 8
+  chance: 5
+  maxEnemies: 3
   spawnRange: {x: -5, y: 5}
