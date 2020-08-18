@@ -1,13 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Camera mainCamera;
+    public AudioSource alert;
+    public AudioSource die;
+    public ParticleSystem falling;
+    public TextMeshProUGUI distanceTMP;
     [Range(0, 1)]
     public float moveSpeed;
     public float mouseY;
+    public bool isDead;
+    public float distance;
+
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+
+        falling.Stop();
+
+        alert.Stop();
+        die.Stop();
+    }
 
     private void Update()
     {
@@ -24,14 +40,28 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
+        if (isDead)
+            rb.gravityScale = 1;
+        else
+        {
+            distance += Time.fixedDeltaTime;
+            distanceTMP.SetText($"Score: {(int) distance}");
+            Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"S");
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            Debug.Log($"Hit! {collision.gameObject.name}");
+        {
+            isDead = true;
+
+            alert.Play();
+
+            die.Play();
+
+            GameManager.instance.Lose.Invoke();
+        }
     }
 
     private void Move(Vector3 dir)
@@ -41,7 +71,7 @@ public class Player : MonoBehaviour
 
     private void FollowMouse(Vector2 mouse)
     {
-        Vector2 worldMouse = mainCamera.ScreenToWorldPoint(mouse);
+        Vector2 worldMouse = GameManager.instance.MainCamera.ScreenToWorldPoint(mouse);
         mouseY = worldMouse.y;
     }
 }
