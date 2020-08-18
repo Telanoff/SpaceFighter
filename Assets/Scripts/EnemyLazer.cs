@@ -57,7 +57,7 @@ public class EnemyLazer : Enemy
 
         lazerLoad.Stop();
         shot = true;
-        GetComponentInChildren<ParticleSystem>().Stop();
+
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
 
