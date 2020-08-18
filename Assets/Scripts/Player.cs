@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         {
             distance += GameManager.instance.PlayerSpeed;
             distanceTMP.SetText($"Score: {(int) distance}");
+            transform.rotation = Quaternion.identity;
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
         }
     }
