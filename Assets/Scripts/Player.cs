@@ -27,11 +27,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0)
-        {
-            mouseY = Camera.main.ScreenToWorldPoint(new Vector2(0, Camera.main.pixelHeight - Input.GetTouch(0).position.y)).y;
-        }
-
         if (Input.GetMouseButton(0))
         {
             FollowMouse(Input.mousePosition);
