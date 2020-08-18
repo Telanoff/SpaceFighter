@@ -27,6 +27,9 @@ public class EnemyLazer : Enemy
 
     protected override void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         if (shot)
         {
             GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
@@ -52,8 +55,9 @@ public class EnemyLazer : Enemy
 
     private IEnumerator Laser()
     {
-        for (float t = 0; t <= 1; t++)
+        do
             yield return new WaitForSeconds(chargeTime);
+        while (GameManager.instance.Paused);
 
         lazerLoad.Stop();
         shot = true;

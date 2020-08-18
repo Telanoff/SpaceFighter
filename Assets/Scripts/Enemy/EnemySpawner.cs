@@ -20,6 +20,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         if (enemies < mode.maxEnemies)
         {
             if (Random.Range(0f, 100f) > mode.chance)

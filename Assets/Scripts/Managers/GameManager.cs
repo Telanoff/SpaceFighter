@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public float PlayerSpeed;
     public int DebrisCount;
     public int StarCount;
+    public bool Paused;
 
     public UnityEvent Lose;
 

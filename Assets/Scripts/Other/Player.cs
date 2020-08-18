@@ -35,6 +35,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         if (isDead)
             rb.gravityScale = 1;
         else
