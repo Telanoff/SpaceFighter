@@ -110,7 +110,7 @@ MonoBehaviour:
   movePrefab: {fileID: 3042842369554872860, guid: 7f2606ac4f31a0f438453a1c8157e59f, type: 3}
   spawnOffset: {x: -1.14, y: 0}
   speed: 0.069
-  gravity: 0.068
+  gravity: 0.042
   shootDelay: 1
 --- !u!1 &1276323275778081102
 GameObject:
