@@ -16,7 +16,8 @@ public class Debris : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.instance.DebrisCount++;
-            Destroy(gameObject);
+            GetComponent<AudioSource>().Play();
+            Destroy(gameObject, 0.14f);
         }
         else if (collision.gameObject.CompareTag("Lazer"))
             Destroy(gameObject);

@@ -34,7 +34,6 @@ public class SceneManager : MonoBehaviour
 
     public void ChangeScene(int index)
     {
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         UnityEngine.SceneManagement.SceneManager.LoadScene(index);
     }
 

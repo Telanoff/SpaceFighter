@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public void DefaultLose()
     {
         Player.falling.Play();
+        SaveAll();
     }
 
     public void GoToShop()
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.69f);
 
         GetComponent<SceneManager>().ChangeScene(1);
+        SaveAll();
     }
 
     private void OnDestroy()
