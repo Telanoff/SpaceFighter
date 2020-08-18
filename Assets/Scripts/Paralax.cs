@@ -17,7 +17,7 @@ public class Paralax : MonoBehaviour
 
     private void FixedUpdate()
     {
-        dist -= GameManager.instance.PlayerSpeed;
+        dist -= GameManager.instance.PlayerSpeed * Time.fixedDeltaTime;
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
 
         if (dist < startPos - width)
