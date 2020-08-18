@@ -48,6 +48,6 @@ public class Enemy : MonoBehaviour
         if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
             GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
         if (GameManager.instance.PlayerSpeed < 1.14)
-            GameManager.instance.PlayerSpeed += Time.deltaTime/10;
+            GameManager.instance.PlayerSpeed += Time.deltaTime/100;
     }
 }
