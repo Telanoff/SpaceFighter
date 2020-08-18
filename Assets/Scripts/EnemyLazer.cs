@@ -64,6 +64,8 @@ public class EnemyLazer : Enemy
         lazerShoot.Play();
         lazerShoot.loop = true;
 
+        StarDust.SpawnStarDust(transform.position + new Vector3(GetComponentInChildren<SpriteRenderer>().bounds.size.x / 3, 0));
+
         Destroy(gameObject, fireTime);
     }
 }
