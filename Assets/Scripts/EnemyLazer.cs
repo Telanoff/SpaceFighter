@@ -16,6 +16,8 @@ public class EnemyLazer : Enemy
 
     protected override void Awake()
     {
+        base.Awake();
+
         GetComponentInChildren<ParticleSystem>().Play();
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
