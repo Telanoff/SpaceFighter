@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             rb.gravityScale = 1;
         else
         {
-            distance += Time.fixedDeltaTime;
+            distance += GameManager.instance.PlayerSpeed;
             distanceTMP.SetText($"Score: {(int) distance}");
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
         }
