@@ -1428,18 +1428,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1686538163}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1686538162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1444,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e2095645a0cf3aa49a6f18e5343e10df, type: 2}
   - {fileID: 11400000, guid: 1f718f4078a15eb48a4678121a820059, type: 2}
   - {fileID: 11400000, guid: 3392b6f004ceb034caae2df9aa274563, type: 2}
+  - {fileID: 11400000, guid: 05958fef71c6adf4992373d67415efc8, type: 2}
   mode: {fileID: 0}
   enemies: 0
 --- !u!114 &1686538163

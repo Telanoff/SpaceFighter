@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    public static readonly string HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", SAUCERHIGHSCORE = "shighscore", MODE = "hmode";
-    public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE };
+    public static readonly string HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", SAUCERHIGHSCORE = "shighscore", LIGHTNINGHIGHSCORE = "lhighscore", MODE = "hmode";
+    public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE, LIGHTNINGHIGHSCORE };
     public static string CHIGHSCORE;
     public TextMeshProUGUI highScoreTMP;
     public TMP_Dropdown modeDropdown;
