@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: LightingMode
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 0}
+  - {fileID: 7633097632938194889, guid: 90ec5a9d3b96aa54184d2a9b29ee4839, type: 3}
   chances:
   - 100
   maxChance: 0
-  chance: 100
+  chance: 5
   maxEnemies: 3
   spawnRange: {x: -5, y: 5}
