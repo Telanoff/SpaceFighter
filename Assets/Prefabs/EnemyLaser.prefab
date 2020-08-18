@@ -5228,7 +5228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16593cdb3865f3b4c8d736e382292c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnPos: {x: 0, y: 0, z: 0}
+  despawnPos: {x: 0, y: 0, z: 0, w: 0}
   lazerLoad: {fileID: 2188663854269108357}
   lazerShoot: {fileID: 7842647813418716595}
   spawnX: 5

@@ -1,14 +1,22 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     public Vector4 despawnPos;
 
     protected Vector2 dir;
+    private bool dontCheck;
 
     protected virtual void FixedUpdate()
     {
+        if (!dontCheck)
+            foreach (Collider2D collider in GetComponents<Collider2D>())
+                if (collider.isTrigger)
+                {
+                    Destroy(collider);
+                    dontCheck = true;
+                }
+
         Move(new Vector2(-GameManager.instance.PlayerSpeed, 0));
         Move(dir);
 
@@ -24,6 +32,12 @@ public class Enemy : MonoBehaviour
     protected virtual void Awake()
     {
         GameManager.instance.GetComponent<EnemySpawner>().enemies++;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == gameObject.layer)
+            Destroy(gameObject);
     }
 
     protected virtual void OnDestroy()

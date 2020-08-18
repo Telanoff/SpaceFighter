@@ -34,14 +34,16 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void Spawn(Vector2 position, int index)
+    public GameObject Spawn(Vector2 position, int index)
     {
         GameObject enemy = Instantiate(mode.prefabs[index]);
         enemy.transform.position = position;
+        return enemy;
     }
 
-    public void Spawn(float x, int index)
+    public GameObject Spawn(float x, int index)
     {
-        Spawn(new Vector2(x, Random.Range(mode.spawnRange.x, mode.spawnRange.y)), index);
+        GameObject enemy = Spawn(new Vector2(x, Random.Range(mode.spawnRange.x, mode.spawnRange.y)), index);
+        return enemy;
     }
 }
