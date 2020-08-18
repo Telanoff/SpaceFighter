@@ -1,5 +1,7 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
@@ -8,6 +10,7 @@ public class SceneManager : MonoBehaviour
     public static readonly string POSTPROCESSING = "postprocessing", HIGHSCORE = "highscore", HARDHIGHSCORE = "hhighscore", SAUCERHIGHSCORE = "shighscore", LIGHTNINGHIGHSCORE = "lhighscore", MODE = "hmode";
     public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE, LIGHTNINGHIGHSCORE };
     public static string CHIGHSCORE;
+    public UnityEvent onSceneChange;
     public TextMeshProUGUI highScoreTMP;
     public TextMeshProUGUI debrisTMP;
     public TextMeshProUGUI starTMP;
@@ -34,6 +37,7 @@ public class SceneManager : MonoBehaviour
 
     public void ChangeScene(int index)
     {
+        onSceneChange.Invoke();
         UnityEngine.SceneManagement.SceneManager.LoadScene(index);
     }
 

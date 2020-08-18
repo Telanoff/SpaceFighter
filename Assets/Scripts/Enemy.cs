@@ -42,12 +42,15 @@ public class Enemy : MonoBehaviour
 
     protected virtual void OnDestroy()
     {
-        if (GameManager.instance.MainCamera != null)
-            GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
-        GameManager.instance.GetComponent<EnemySpawner>().enemies--;
-        if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
-            GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
-        if (GameManager.instance.PlayerSpeed < 1.14)
-            GameManager.instance.PlayerSpeed += Time.deltaTime/100;
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.MainCamera != null)
+                GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
+            GameManager.instance.GetComponent<EnemySpawner>().enemies--;
+            if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
+                GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
+            if (GameManager.instance.PlayerSpeed < 1.14)
+                GameManager.instance.PlayerSpeed += Time.deltaTime / 100;
+        }
     }
 }
