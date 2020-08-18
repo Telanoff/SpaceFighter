@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 1022883051}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,6 +1364,7 @@ GameObject:
   - component: {fileID: 1686538161}
   - component: {fileID: 1686538163}
   - component: {fileID: 1686538162}
+  - component: {fileID: 1686538164}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1401,6 +1402,7 @@ MonoBehaviour:
   MainCamera: {fileID: 1407170530}
   MainCameraDefaultPosition: {x: 5, y: 0, z: -10}
   PlayerSpeed: 0.069
+  DebrisCount: 0
   Lose:
     m_PersistentCalls:
       m_Calls:
@@ -1461,6 +1463,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highScoreTMP: {fileID: 0}
   modeDropdown: {fileID: 0}
+--- !u!114 &1686538164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686538159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7c584703d09654ea6a335dce4acb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3366090808320290271, guid: b9fbf153268e17a4c81dd6c916592de7, type: 3}
+  bounds: {x: -5, y: 5}
+  spawnX: 15
+  chance: 1
 --- !u!1 &1947773528
 GameObject:
   m_ObjectHideFlags: 0

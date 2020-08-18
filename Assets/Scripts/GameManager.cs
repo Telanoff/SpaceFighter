@@ -20,16 +20,13 @@ public class GameManager : MonoBehaviour
     public Camera MainCamera;
     public Vector3 MainCameraDefaultPosition;
     public float PlayerSpeed;
+    public int DebrisCount;
 
     public UnityEvent Lose;
 
     public void DefaultLose()
     {
         Player.falling.Play();
-
-        if (Player.distance > PlayerPrefs.GetInt(SceneManager.CHIGHSCORE))
-            PlayerPrefs.SetInt(SceneManager.CHIGHSCORE, (int) Player.distance);
-        PlayerPrefs.Save();
     }
 
     public void GoToShop()
@@ -46,8 +43,16 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        SaveAll();
+    }
+
+    public void SaveAll()
+    {
         if (Player.distance > PlayerPrefs.GetInt(SceneManager.CHIGHSCORE))
             PlayerPrefs.SetInt(SceneManager.CHIGHSCORE, (int)Player.distance);
+
+        PlayerPrefs.SetInt(Debris.DEBRIS, PlayerPrefs.GetInt(Debris.DEBRIS) + DebrisCount);
+
         PlayerPrefs.Save();
     }
 }
