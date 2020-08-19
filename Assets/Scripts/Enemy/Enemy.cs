@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         valid = true;
         if (!dontCheck)
             foreach (Collider2D collider in GetComponents<Collider2D>())

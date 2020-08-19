@@ -10,6 +10,9 @@ public class DebrisGenerator : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         if (Random.Range(0f, 100f) <= chance)
         {
             GameObject debris = Instantiate(prefab);

@@ -19,6 +19,9 @@ public class Paralax : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         dist -= (GameManager.instance ? GameManager.instance.PlayerSpeed : 0.1f) * (paralax / 100);
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
 

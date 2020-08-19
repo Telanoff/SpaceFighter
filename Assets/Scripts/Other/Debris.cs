@@ -8,6 +8,9 @@ public class Debris : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         transform.position -= new Vector3(GameManager.instance.PlayerSpeed, 0);
     }
 

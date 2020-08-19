@@ -29,6 +29,9 @@ public class EnemyPoint : Enemy
 
     protected override void FixedUpdate()
     {
+        if (GameManager.instance.Paused)
+            return;
+
         angle += Mathf.Deg2Rad;
         dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * speed;
 
@@ -46,7 +49,9 @@ public class EnemyPoint : Enemy
     {
         while (alive)
         {
-            yield return new WaitForSeconds(shootDelay);
+            do
+                yield return new WaitForSeconds(shootDelay);
+            while (GameManager.instance.Paused);
 
             GameObject shot = Instantiate(movePrefab);
             shot.transform.position = transform.position;
