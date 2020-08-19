@@ -13,7 +13,7 @@ public class DebrisGenerator : MonoBehaviour
         if (GameManager.instance.Paused)
             return;
 
-        if (Random.Range(0f, 100f) <= chance)
+        if (Random.Range(0f, 100f) <= chance * Mathf.Max((float)((float)GameManager.instance.PlayerSpeed / 1.14), 0.3f))
         {
             GameObject debris = Instantiate(prefab);
             debris.transform.position = new Vector3(spawnX, Random.Range(bounds.x, bounds.y));
