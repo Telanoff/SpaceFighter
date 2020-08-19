@@ -67,4 +67,16 @@ public class SceneManager : MonoBehaviour
         if (ppt != null)
             ppt.isOn = value;
     }
+
+    public void ChangePlayerType(int type)
+    {
+        PlayerPrefs.SetInt(Player.TYPE, type);
+        PlayerPrefs.Save();
+    }
+
+    public void ChangePlayerSprite(int sprite)
+    {
+        PlayerPrefs.SetInt(Player.SPRITE, sprite);
+        PlayerPrefs.Save();
+    }
 }

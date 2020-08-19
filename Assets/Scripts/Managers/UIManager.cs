@@ -1,12 +1,33 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static readonly string SHOPTAB = "shoptab";
+
     public GameObject menu;
     public TextMeshProUGUI counter;
+    public GameObject[] panels;
+
+    private void Start()
+    {
+        if (panels.Length > 0)
+        {
+            ChangePanel(PlayerPrefs.GetInt(SHOPTAB));
+        }
+    }
+
+    public void ChangePanel(int index)
+    {
+        panels[PlayerPrefs.GetInt(SHOPTAB)].SetActive(false);
+
+        PlayerPrefs.SetInt(SHOPTAB, index);
+        PlayerPrefs.Save();
+
+        panels[PlayerPrefs.GetInt(SHOPTAB)].SetActive(true);
+    }
 
     public void ShowMenu()
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static readonly string SPRITE = "playersprite";
+    public static readonly string SPRITE = "playersprite", TYPE = "playertype";
 
     public AudioSource alert;
     public AudioSource die;
