@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (enemies < mode.maxEnemies)
         {
-            if (Random.Range(0f, 100f) > mode.chance)
+            if (Random.Range(0f, 100f) > mode.chance * Mathf.Max((float) ((float) GameManager.instance.PlayerSpeed / 1.14), 0.5f))
                 return;
             float r = Random.Range(0f, 100f);
             float lc = 0;
