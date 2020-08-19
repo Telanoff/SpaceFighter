@@ -40,7 +40,7 @@ public class SceneManager : MonoBehaviour
     public void ChangeScene(int index)
     {
         onSceneChange.Invoke();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(index);
     }
 
     public void ChangeMode(int newMode)
