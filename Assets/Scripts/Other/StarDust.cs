@@ -8,6 +8,8 @@ public class StarDust : MonoBehaviour
     public GameObject prefab;
     public float chance;
 
+    private bool collected;
+
     private void Start()
     {
         if (Prefab == null)
@@ -26,8 +28,9 @@ public class StarDust : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !collected)
         {
+            collected = true;
             GameManager.instance.StarCount++;
             Destroy(gameObject);
         }

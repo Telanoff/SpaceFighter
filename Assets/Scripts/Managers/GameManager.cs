@@ -60,6 +60,9 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(Debris.DEBRIS, PlayerPrefs.GetInt(Debris.DEBRIS) + DebrisCount);
             PlayerPrefs.SetInt(StarDust.STARDUST, PlayerPrefs.GetInt(StarDust.STARDUST) + StarCount);
 
+            DebrisCount = 0;
+            StarCount = 0;
+
             PlayerPrefs.Save();
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Debris : MonoBehaviour
 {
     public static readonly string DEBRIS = "debris";
+    private bool triggered;
 
     private void FixedUpdate()
     {
@@ -16,10 +17,12 @@ public class Debris : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !triggered)
         {
+            triggered = true;
             GameManager.instance.DebrisCount++;
             GetComponent<AudioSource>().Play();
+
             Destroy(gameObject, 0.198f);
         }
         else if (collision.gameObject.CompareTag("Lazer"))

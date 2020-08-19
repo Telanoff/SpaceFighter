@@ -53,9 +53,7 @@ public class Enemy : MonoBehaviour
                 GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
             GameManager.instance.GetComponent<EnemySpawner>().enemies--;
             if (GameManager.instance.GetComponent<EnemySpawner>().mode.chance < GameManager.instance.GetComponent<EnemySpawner>().mode.maxChance)
-                GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.deltaTime;
-            if (GameManager.instance.PlayerSpeed < 1.14)
-                GameManager.instance.PlayerSpeed += Time.deltaTime / 100;
+                GameManager.instance.GetComponent<EnemySpawner>().mode.chance += Time.fixedDeltaTime;
         }
     }
 }

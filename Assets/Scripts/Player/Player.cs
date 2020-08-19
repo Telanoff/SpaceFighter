@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [Range(0, 1)]
     public float moveSpeed;
     public float speed;
+    public float maxSpeed;
     public float mouseY;
     public float distance;
     public bool isDead;
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour
             distance += GameManager.instance.PlayerSpeed;
             distanceTMP.SetText($"Score: {(int) distance}");
             transform.rotation = Quaternion.identity;
+            if (GameManager.instance.PlayerSpeed < maxSpeed)
+                GameManager.instance.PlayerSpeed += Time.fixedDeltaTime / 1000;
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
         }
     }

@@ -5191,7 +5191,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7633097632938194890}
   - component: {fileID: 8722931038584226703}
-  - component: {fileID: 7727353981515286280}
   - component: {fileID: 7633097632938194892}
   m_Layer: 10
   m_Name: EnemyLaser
@@ -5235,27 +5234,6 @@ MonoBehaviour:
   shake: 0.69
   chargeTime: 1.98
   fireTime: 1
---- !u!50 &7727353981515286280
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7633097632938194889}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &7633097632938194892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5280,5 +5258,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 1.25}
+  m_Size: {x: 10, y: 0.8}
   m_EdgeRadius: 0

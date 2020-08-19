@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        if (panels.Length > 0)
+        if (panels != null)
         {
             ChangePanel(PlayerPrefs.GetInt(SHOPTAB));
         }
