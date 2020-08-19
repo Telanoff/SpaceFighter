@@ -42,37 +42,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            clickFrames++;
-            if (tapped && releasedFrames < 3)
-            {
-                print("double press");
-                releasedFrames = 0;
-            }
-            else if(!tapped && clickFrames + releasedFrames > 5)
-            {
-                FollowMouse(Input.mousePosition);
-                releasedFrames = 0;
-            }
-        } else
-        {
-            if (clickFrames < 3)
-            {
-                tapped = true;
-                clickFrames = 0;
-            }
-            if (tapped && releasedFrames < 3)
-            {
-                FollowMouse(Input.mousePosition);
-                releasedFrames++;
-            } else
-            {
-                tapped = false;
-            }
-        }
-        /*if (Input.GetMouseButton(0))
-        {
             FollowMouse(Input.mousePosition);
-        }*/
+        }
     }
 
     private void FixedUpdate()
@@ -87,6 +58,7 @@ public class Player : MonoBehaviour
             distance += GameManager.instance.PlayerSpeed;
             distanceTMP.SetText($"Score: {(int) distance}");
             transform.rotation = Quaternion.identity;
+            transform.position = new Vector3(0, transform.position.y);
             if (GameManager.instance.PlayerSpeed < maxSpeed)
                 GameManager.instance.PlayerSpeed += Time.fixedDeltaTime / 1000;
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
