@@ -307,6 +307,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &401819692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 464557022177158298, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+  m_PrefabInstance: {fileID: 464557021882690742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &517171022
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +689,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &749784215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 464557021283999777, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+  m_PrefabInstance: {fileID: 464557021882690742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &867954731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1518,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068042785}
   m_CullTransparentMesh: 0
+--- !u!1 &1170224873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 464557020871858783, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+  m_PrefabInstance: {fileID: 464557021882690742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1312276684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2137,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1612139712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 464557020271108214, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+  m_PrefabInstance: {fileID: 464557021882690742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1626486810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,5 +3335,21 @@ PrefabInstance:
       propertyPath: distanceTMP
       value: 
       objectReference: {fileID: 952340747}
+    - target: {fileID: 464557021556693085, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 401819692}
+    - target: {fileID: 464557021556693085, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 1612139712}
+    - target: {fileID: 464557021556693085, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 749784215}
+    - target: {fileID: 464557021556693085, guid: 77565871640a9864dbf0c460643aaf68, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 1170224873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77565871640a9864dbf0c460643aaf68, type: 3}

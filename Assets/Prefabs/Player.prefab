@@ -5364,10 +5364,10 @@ MonoBehaviour:
   falling: {fileID: 464557020606072557}
   distanceTMP: {fileID: 0}
   sprites:
-  - {fileID: 464557022177158296}
-  - {fileID: 464557020271108212}
-  - {fileID: 464557021283999791}
-  - {fileID: 464557020871858781}
+  - {fileID: 464557022177158298}
+  - {fileID: 464557020271108214}
+  - {fileID: 464557021283999777}
+  - {fileID: 464557020871858783}
   moveSpeed: 0.24
   speed: 0
   mouseY: 0

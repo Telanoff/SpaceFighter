@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public AudioSource die;
     public ParticleSystem falling;
     public TextMeshProUGUI distanceTMP;
-    public SpriteRenderer[] sprites;
+    public GameObject[] sprites;
     [Range(0, 1)]
     public float moveSpeed;
     public float speed;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        sprites[PlayerPrefs.GetInt(SPRITE)].enabled = true;
+        sprites[PlayerPrefs.GetInt(SPRITE)].SetActive(true);
 
         rb = GetComponent<Rigidbody2D>();
 
