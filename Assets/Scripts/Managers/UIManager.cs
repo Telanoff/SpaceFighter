@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,12 +13,20 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI counter;
     public GameObject[] panels;
 
+    public UnityEngine.UI.Button backButton;
+
     private void Start()
     {
         if (panels != null)
         {
             ChangePanel(PlayerPrefs.GetInt(SHOPTAB));
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (menu.activeInHierarchy && Input.GetMouseButtonUp(0))
+            HideMenu();
     }
 
     public void ChangePanel(int index)
@@ -44,20 +54,33 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator Resume()
     {
-        counter.SetText("3");
-        yield return new WaitForSeconds(1);
+        if (!menu.activeInHierarchy)
+        {
+            counter.SetText("3");
+            yield return new WaitForSeconds(1);
+        }
 
-        counter.SetText("2");
-        yield return new WaitForSeconds(1);
+        if (!menu.activeInHierarchy)
+        {
+            counter.SetText("2");
+            yield return new WaitForSeconds(1);
+        }
 
-        counter.SetText("1");
-        yield return new WaitForSeconds(1);
+        if (!menu.activeInHierarchy)
+        {
+            counter.SetText("1");
+            yield return new WaitForSeconds(1);
+        }
 
-        counter.SetText("GO!");
-        yield return new WaitForSeconds(0.69f);
+        if (!menu.activeInHierarchy)
+        {
+            counter.SetText("GO!");
+            yield return new WaitForSeconds(0.69f);
+        }
 
         counter.SetText("");
 
-        GameManager.instance.Paused = false;
+        if(!menu.activeInHierarchy)
+            GameManager.instance.Paused = false;
     }
 }

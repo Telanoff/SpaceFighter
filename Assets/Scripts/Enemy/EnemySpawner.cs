@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (r <= mode.chances[i] + lc)
                 {
-                    Spawn(15, i);
+                    Spawn(17, i);
                     break;
                 }
                 lc += mode.chances[i];
