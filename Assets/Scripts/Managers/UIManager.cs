@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI counter;
     public GameObject[] panels;
 
-    public UnityEngine.UI.Button backButton;
+    public Button backButton;
 
     private void Start()
     {

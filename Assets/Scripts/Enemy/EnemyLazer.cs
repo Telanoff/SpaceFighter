@@ -53,6 +53,9 @@ public class EnemyLazer : Enemy
         StartCoroutine("Laser");
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {}
+
     private IEnumerator Laser()
     {
         do
