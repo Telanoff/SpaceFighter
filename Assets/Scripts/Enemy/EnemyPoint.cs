@@ -6,7 +6,6 @@ public class EnemyPoint : Enemy
 {
     public GameObject movePrefab;
     public Vector2 spawnOffset;
-    public float speed;
     public float gravity;
     public float shootDelay;
 
@@ -20,7 +19,7 @@ public class EnemyPoint : Enemy
 
         angle = Random.Range(-Mathf.PI, Mathf.PI);
 
-        dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * speed;
+        dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * GameManager.instance.PlayerSpeed/2;
 
         alive = true;
 
@@ -33,7 +32,7 @@ public class EnemyPoint : Enemy
             return;
 
         angle += Mathf.Deg2Rad;
-        dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * speed;
+        dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * GameManager.instance.PlayerSpeed/2;
 
         base.FixedUpdate();
 
@@ -50,7 +49,7 @@ public class EnemyPoint : Enemy
         while (alive)
         {
             do
-                yield return new WaitForSeconds(shootDelay);
+                yield return new WaitForSeconds((float) 2.14 - GameManager.instance.PlayerSpeed);
             while (GameManager.instance.Paused);
 
             GameObject shot = Instantiate(movePrefab);
