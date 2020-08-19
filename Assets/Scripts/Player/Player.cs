@@ -3,20 +3,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static readonly string SPRITE = "playersprite";
+
     public AudioSource alert;
     public AudioSource die;
     public ParticleSystem falling;
     public TextMeshProUGUI distanceTMP;
+    public SpriteRenderer[] sprites;
     [Range(0, 1)]
     public float moveSpeed;
+    public float speed;
     public float mouseY;
-    public bool isDead;
     public float distance;
+    public bool isDead;
 
     private Rigidbody2D rb;
 
     private void Start()
     {
+        sprites[PlayerPrefs.GetInt(SPRITE)].enabled = true;
+
         rb = GetComponent<Rigidbody2D>();
 
         falling.Stop();
