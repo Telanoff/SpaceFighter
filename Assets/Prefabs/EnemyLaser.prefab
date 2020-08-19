@@ -5233,7 +5233,7 @@ MonoBehaviour:
   lazerShoot: {fileID: 7842647813418716595}
   spawnX: 5
   shake: 0.69
-  chargeTime: 1
+  chargeTime: 1.98
   fireTime: 1
 --- !u!50 &7727353981515286280
 Rigidbody2D:
