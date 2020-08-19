@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     public bool isDead;
 
     private Rigidbody2D rb;
+    private int clickFrames;
+    private int releasedFrames;
+    private bool tapped;
 
     private void Start()
     {
@@ -30,14 +33,46 @@ public class Player : MonoBehaviour
 
         alert.Stop();
         die.Stop();
+
+        clickFrames = 3;
+        releasedFrames = 0;
     }
 
     private void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            FollowMouse(Input.mousePosition);
+            clickFrames++;
+            if (tapped && releasedFrames < 3)
+            {
+                print("double press");
+                releasedFrames = 0;
+            }
+            else if(!tapped && clickFrames + releasedFrames > 5)
+            {
+                FollowMouse(Input.mousePosition);
+                releasedFrames = 0;
+            }
+        } else
+        {
+            if (clickFrames < 3)
+            {
+                tapped = true;
+                clickFrames = 0;
+            }
+            if (tapped && releasedFrames < 3)
+            {
+                FollowMouse(Input.mousePosition);
+                releasedFrames++;
+            } else
+            {
+                tapped = false;
+            }
         }
+        /*if (Input.GetMouseButton(0))
+        {
+            FollowMouse(Input.mousePosition);
+        }*/
     }
 
     private void FixedUpdate()
