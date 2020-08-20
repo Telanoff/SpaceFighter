@@ -5231,7 +5231,7 @@ MonoBehaviour:
   lazerLoad: {fileID: 2188663854269108357}
   lazerShoot: {fileID: 7842647813418716595}
   spawnX: 5
-  shake: 0.69
+  shake: 0.6
   chargeTime: 1.98
   fireTime: 1
 --- !u!61 &7633097632938194892

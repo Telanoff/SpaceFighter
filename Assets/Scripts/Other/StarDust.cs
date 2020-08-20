@@ -32,7 +32,9 @@ public class StarDust : MonoBehaviour
         {
             collected = true;
             GameManager.instance.StarCount++;
-            Destroy(gameObject);
+            GetComponent<AudioSource>().Play();
+
+            Destroy(gameObject, 0.198f);
         }
     }
 

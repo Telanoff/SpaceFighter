@@ -32,8 +32,8 @@ public class EnemyLazer : Enemy
 
         if (shot)
         {
-            GameManager.instance.MainCamera.transform.position += Random.insideUnitSphere * shake;
             GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
+            GameManager.instance.MainCamera.transform.position += Random.insideUnitSphere * shake;
         }
     }
 
@@ -74,5 +74,12 @@ public class EnemyLazer : Enemy
         StarDust.SpawnStarDust(transform.position + new Vector3(GetComponentInChildren<SpriteRenderer>().bounds.size.x / 3, 0));
 
         Destroy(gameObject, fireTime);
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+
+        GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
     }
 }
