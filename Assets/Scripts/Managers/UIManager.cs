@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if (menu.activeInHierarchy && Input.GetMouseButtonUp(0))
             HideMenu();
@@ -39,15 +39,22 @@ public class UIManager : MonoBehaviour
 
     public void ShowMenu()
     {
-        menu.SetActive(true);
-
-        GameManager.instance.Paused = true;
+        StartCoroutine("Pause");
     }
 
     public void HideMenu()
     {
         menu.SetActive(false);
         StartCoroutine("Resume");
+    }
+
+    private IEnumerator Pause()
+    {
+        yield return new WaitForFixedUpdate();
+
+        menu.SetActive(true);
+
+        GameManager.instance.Paused = true;
     }
 
     private IEnumerator Resume()
