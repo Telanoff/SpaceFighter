@@ -5370,7 +5370,7 @@ MonoBehaviour:
   - {fileID: 464557020871858783}
   moveSpeed: 0.24
   speed: 0
-  maxSpeed: 1.24
+  maxSpeed: 0.69
   mouseY: 0
   distance: 0
   isDead: 0
