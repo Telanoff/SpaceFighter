@@ -32,8 +32,8 @@ public class EnemyLazer : Enemy
 
         if (shot)
         {
-            GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
             GameManager.instance.MainCamera.transform.position += Random.insideUnitSphere * shake;
+            GameManager.instance.MainCamera.transform.position = GameManager.instance.MainCameraDefaultPosition;
         }
     }
 
