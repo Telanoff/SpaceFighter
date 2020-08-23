@@ -16,6 +16,7 @@ public class SceneManager : MonoBehaviour
     public TextMeshProUGUI highScoreTMP;
     public TextMeshProUGUI debrisTMP;
     public TextMeshProUGUI starTMP;
+    public TextMeshProUGUI gamesPlayedTMP;
     public Toggle ppt;
     public TMP_Dropdown modeDropdown;
     public Camera mainCamera;
@@ -33,6 +34,8 @@ public class SceneManager : MonoBehaviour
             debrisTMP.SetText($"{PlayerPrefs.GetInt(Debris.DEBRIS)}");
         if (starTMP != null)
             starTMP.SetText($"{PlayerPrefs.GetInt(StarDust.STARDUST)}");
+        if (gamesPlayedTMP != null)
+            gamesPlayedTMP.SetText($"Games Played: {PlayerPrefs.GetInt(GameManager.GAMES_PLAYED)}");
         if (modeDropdown != null)
             modeDropdown.value = PlayerPrefs.GetInt(MODE);
     }
