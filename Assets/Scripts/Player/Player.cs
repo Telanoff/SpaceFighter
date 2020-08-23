@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public float maxSpeed;
     public float mouseY;
     public float distance;
+    public float x;
     public bool isDead;
 
     private Rigidbody2D rb;
@@ -55,10 +56,13 @@ public class Player : MonoBehaviour
             rb.gravityScale = 1;
         else
         {
-            distance += GameManager.instance.PlayerSpeed;
-            distanceTMP.SetText($"Score: {(int) distance}");
+            if (distanceTMP != null)
+            {
+                distance += GameManager.instance.PlayerSpeed;
+                distanceTMP.SetText($"Score: {(int) distance}");
+            }
             transform.rotation = Quaternion.identity;
-            transform.position = new Vector3(0, transform.position.y);
+            transform.position = new Vector3(x, transform.position.y);
             if (GameManager.instance.PlayerSpeed < maxSpeed)
                 GameManager.instance.PlayerSpeed += Time.fixedDeltaTime / 1000;
             Move(new Vector2(0, Mathf.Clamp(mouseY - transform.position.y, -moveSpeed, moveSpeed)));
