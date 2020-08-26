@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public static string GAMES_PLAYED = "gamesplayed";
+
     public Player Player;
     public Camera MainCamera;
     public Vector3 MainCameraDefaultPosition;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     public bool Paused;
 
     public UnityEvent Lose;
+
+    private bool played;
 
     public void DefaultLose()
     {
@@ -62,6 +66,13 @@ public class GameManager : MonoBehaviour
 
             DebrisCount = 0;
             StarCount = 0;
+
+            if (!played)
+            {
+                PlayerPrefs.SetInt(GAMES_PLAYED, PlayerPrefs.GetInt(GAMES_PLAYED) + 1);
+
+                played = true;
+            }
 
             PlayerPrefs.Save();
         }
