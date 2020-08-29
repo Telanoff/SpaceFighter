@@ -20,9 +20,6 @@ public class Player : MonoBehaviour
     public bool isDead;
 
     private Rigidbody2D rb;
-    private int clickFrames;
-    private int releasedFrames;
-    private bool tapped;
 
     private void Start()
     {
@@ -34,9 +31,6 @@ public class Player : MonoBehaviour
 
         alert.Stop();
         die.Stop();
-
-        clickFrames = 3;
-        releasedFrames = 0;
     }
 
     private void Update()
