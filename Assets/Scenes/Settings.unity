@@ -202,7 +202,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4723165}
   m_Template: {fileID: 397742829}
   m_CaptionText: {fileID: 5531242}
@@ -3813,6 +3813,7 @@ MonoBehaviour:
   highScoreTMP: {fileID: 0}
   debrisTMP: {fileID: 0}
   starTMP: {fileID: 0}
+  gamesPlayedTMP: {fileID: 0}
   ppt: {fileID: 1362185501}
   modeDropdown: {fileID: 4723164}
   mainCamera: {fileID: 90123977}
