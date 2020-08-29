@@ -1683,7 +1683,9 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!81 &1407170529
 AudioListener:
@@ -2224,6 +2226,7 @@ MonoBehaviour:
   highScoreTMP: {fileID: 0}
   debrisTMP: {fileID: 0}
   starTMP: {fileID: 0}
+  gamesPlayedTMP: {fileID: 0}
   ppt: {fileID: 0}
   modeDropdown: {fileID: 0}
   mainCamera: {fileID: 1407170530}
