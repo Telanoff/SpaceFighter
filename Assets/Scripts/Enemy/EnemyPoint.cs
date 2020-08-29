@@ -6,8 +6,8 @@ public class EnemyPoint : Enemy
 {
     public GameObject movePrefab;
     public Vector2 spawnOffset;
-    public float gravity;
     public float shootDelay;
+    public float gravity;
 
     private Vector2 playerDir;
     private float angle;
