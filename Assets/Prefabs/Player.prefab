@@ -5230,7 +5230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464557021556693083}
   - component: {fileID: 464557021556693080}
-  - component: {fileID: 464557021556693081}
+  - component: {fileID: -6781619851510275517}
   - component: {fileID: 464557021556693082}
   - component: {fileID: 464557021556693085}
   m_Layer: 0
@@ -5291,7 +5291,7 @@ PolygonCollider2D:
       - {x: 0.82993, y: -0.34975728}
       - {x: 1.1735079, y: -0.19001463}
       - {x: 0.57832396, y: 0.049435407}
---- !u!60 &464557021556693081
+--- !u!60 &-6781619851510275517
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5373,6 +5373,7 @@ MonoBehaviour:
   maxSpeed: 0.69
   mouseY: 0
   distance: 0
+  x: 0
   isDead: 0
 --- !u!1 &464557021887790164
 GameObject:

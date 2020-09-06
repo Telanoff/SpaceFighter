@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 1005771707880061195}
   - component: {fileID: 6337649079446628873}
   - component: {fileID: 6271187451243590171}
-  - component: {fileID: -1141289285423263071}
   - component: {fileID: -1782088588243247718}
   m_Layer: 10
   m_Name: EnemyMoving
@@ -164,42 +163,6 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.4277504, y: -0.25308055}
-      - {x: 0.3545727, y: -0.08856729}
-      - {x: 0.20089364, y: -0.009778172}
-      - {x: 0.41774404, y: 0.1063489}
-      - {x: 0.415488, y: 0.1951803}
-      - {x: 0.6943909, y: 0.4358076}
-      - {x: 0.28676695, y: 0.36382833}
-      - {x: -0.17955387, y: 0.18215844}
-      - {x: -0.7293812, y: 0.0040183067}
-      - {x: 0.021401355, y: -0.27460608}
-      - {x: 0.7272434, y: -0.44007164}
---- !u!60 &-1141289285423263071
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042842369554872860}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
