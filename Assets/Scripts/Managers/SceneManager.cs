@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.PostProcessing;
@@ -13,12 +12,7 @@ public class SceneManager : MonoBehaviour
     public static readonly string[] HIGHSCORES = { HIGHSCORE, HARDHIGHSCORE, SAUCERHIGHSCORE, LIGHTNINGHIGHSCORE, METEORMODE };
     public static string CHIGHSCORE;
     public UnityEvent onSceneChange;
-    public TextMeshProUGUI highScoreTMP;
-    public TextMeshProUGUI debrisTMP;
-    public TextMeshProUGUI starTMP;
-    public TextMeshProUGUI gamesPlayedTMP;
     public Toggle ppt;
-    public TMP_Dropdown modeDropdown;
     public Camera mainCamera;
 
     public bool pp;
@@ -27,17 +21,6 @@ public class SceneManager : MonoBehaviour
     {
         ChangeMode(PlayerPrefs.GetInt(MODE));
         TogglePP(PlayerPrefs.GetInt(POSTPROCESSING) == 1);
-
-        if (highScoreTMP != null)
-            highScoreTMP.SetText($"High Score: {PlayerPrefs.GetInt(CHIGHSCORE)}");
-        if (debrisTMP != null)
-            debrisTMP.SetText($"{PlayerPrefs.GetInt(Debris.DEBRIS)}");
-        if (starTMP != null)
-            starTMP.SetText($"{PlayerPrefs.GetInt(StarDust.STARDUST)}");
-        if (gamesPlayedTMP != null)
-            gamesPlayedTMP.SetText($"Games Played: {PlayerPrefs.GetInt(GameManager.GAMES_PLAYED)}");
-        if (modeDropdown != null)
-            modeDropdown.value = PlayerPrefs.GetInt(MODE);
     }
 
     public void ChangeScene(int index)

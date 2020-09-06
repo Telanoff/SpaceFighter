@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using UnityEditor;
 using System.Collections;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,13 @@ public class GameManager : MonoBehaviour
     public UnityEvent Lose;
 
     private bool played;
+
+    public void SaveGame()
+    {
+        Game game = new Game((int) Player.distance, DebrisCount, StarCount);
+
+        DataUtil.Serialize(game, $"{PlayerPrefs.GetInt(GAMES_PLAYED) + 1}.game");
+    }
 
     public void DefaultLose()
     {

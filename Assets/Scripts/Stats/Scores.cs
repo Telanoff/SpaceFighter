@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class Scores : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
     public TMP_Dropdown dropdown;
-    public string selScorePath;
+    public string selHighScorePath;
+    public string selAvgScorePath;
 
     private void Awake()
     {
@@ -14,9 +15,24 @@ public class Scores : MonoBehaviour
 
     public void ChangeSelHighScore(int index)
     {
-        selScorePath = SceneManager.HIGHSCORES[index];
-        scoreText.SetText($"{PlayerPrefs.GetInt(selScorePath)}");
+        selHighScorePath = SceneManager.HIGHSCORES[index];
+        highScoreText.SetText($"{PlayerPrefs.GetInt(selHighScorePath)}");
 
         dropdown.value = index;
+    }
+
+    public static int GetAverageScore()
+    {
+        int[] scores = new int[PlayerPrefs.GetInt(GameManager.GAMES_PLAYED)];
+        int all = 0;
+        foreach (int score in scores)
+            all += score;
+
+        return all / PlayerPrefs.GetInt(GameManager.GAMES_PLAYED);
+    }
+
+    public void ChangeSelAverageScore(int index)
+    {
+
     }
 }
